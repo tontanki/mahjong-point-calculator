@@ -1,0 +1,16 @@
+{
+    "name": "mahjong-pointcalculator",
+    "version": "1.0.0",
+    "description": "麻雀点数計算",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "npx tsc && node dist/main.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "typescript": "^5.6.2"
+    }
+}

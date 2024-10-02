@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "editor.fontSize": 18,
+        "editor.formatOnSave": true,
+        "editor.formatOnPaste": true,
+        "prettier.tabWidth": 4
+    }
+}
