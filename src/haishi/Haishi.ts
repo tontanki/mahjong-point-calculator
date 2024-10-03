@@ -55,6 +55,17 @@ export class Haishi {
         return yaochuhai;
     }
 
+    getTilesTypeList(key: TileType): string {
+        const tiles = this.haishi[key].map((tileNumber) => {
+            if (tileNumber === 0) {
+                return '';
+            }
+            return tileNumber;
+        });
+
+        return tiles.join('');
+    }
+
     validate(): boolean {
         if (this.totalTiles > 14) {
             throw new Error('手牌が14枚を超えています');

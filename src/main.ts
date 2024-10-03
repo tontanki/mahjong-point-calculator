@@ -4,7 +4,6 @@ import { yakumanFinder } from './yakuman';
 
 export const pointCalculator = (
     hand: Tile[],
-    tsumo: Tile,
     agariTile: Tile,
     fulo: Fulo[] | null,
     grandBrow: '東' | '南' | '西' | '北',
@@ -18,7 +17,7 @@ export const pointCalculator = (
         haishi.addTile(tile);
     });
 
-    haishi.addTile(tsumo);
+    haishi.addTile(agariTile);
 
     console.log(
         'yakumanFinder : ',
@@ -28,22 +27,21 @@ export const pointCalculator = (
 
 const hand = [
     { name: 'm1' },
+    { name: 'm1' },
+    { name: 'm1' },
+    { name: 'm3' },
+    { name: 'm3' },
+    { name: 'm4' },
+    { name: 'm4' },
+    { name: 'm5' },
+    { name: 'm5' },
+    { name: 'm8' },
+    { name: 'm8' },
     { name: 'm9' },
-    { name: 'p1' },
-    { name: 'p9' },
-    { name: 's1' },
-    { name: 's9' },
-    { name: 'z1' },
-    { name: 'z2' },
-    { name: 'z3' },
-    { name: 'z4' },
-    { name: 'z5' },
-    { name: 'z6' },
-    { name: 'z7' },
+    { name: 'm9' },
 ];
 
-const tsumo = { name: 'z7' };
-const agariTile = { name: 'z7' };
+const agariTile = { name: 'm9' };
 const fulo = null;
 const grandBrow = '東';
 const playerBrow = '東';
@@ -52,7 +50,6 @@ const isRichi = false;
 
 pointCalculator(
     hand,
-    tsumo,
     agariTile,
     fulo,
     grandBrow,
