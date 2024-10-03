@@ -1,12 +1,13 @@
-import { Tile, TilesList } from '@types';
+import { Tile } from '@types';
 import { isKokushimusou13 } from './kokushimusou';
+import { Haishi } from 'src/haishi/Haishi';
 
 export const yakumanFinder = (
-    haishi: TilesList,
+    haishi: Haishi,
     agariTile: Tile,
     agariType: 'ツモ' | 'ロン'
 ): string => {
     if (isKokushimusou13(haishi, agariTile)) return 'kokushimusou13';
 
-    return 'yakuman';
+    return 'not find';
 };

@@ -28,6 +28,33 @@ export class Haishi {
         this.validate();
     }
 
+    clone(): Haishi {
+        const newHaishi = new Haishi();
+        newHaishi.haishi = {
+            m: [...this.haishi.m],
+            p: [...this.haishi.p],
+            s: [...this.haishi.s],
+            z: [...this.haishi.z],
+        };
+        newHaishi.totalTiles = this.totalTiles;
+
+        return newHaishi;
+    }
+
+    getYaochuhai(): number[] {
+        const yaochuhai = [
+            ...this.haishi.z,
+            this.haishi.m[1],
+            this.haishi.m[9],
+            this.haishi.p[1],
+            this.haishi.p[9],
+            this.haishi.s[1],
+            this.haishi.s[9],
+        ].filter((tileNumber) => tileNumber !== undefined);
+
+        return yaochuhai;
+    }
+
     validate(): boolean {
         if (this.totalTiles > 14) {
             throw new Error('手牌が14枚を超えています');
