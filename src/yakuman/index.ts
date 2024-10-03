@@ -5,6 +5,7 @@ import { isChuren, isJunseichuren } from './churen';
 import { isSuankou, isSuankoutanki } from './suankou';
 import { isDaisangen } from './daisangen';
 import { isTsuiso } from './tsuiso';
+import { isRyuiso } from './ryuiso';
 
 export const yakumanFinder = (
     haishi: Haishi,
@@ -27,6 +28,7 @@ export const yakumanFinder = (
         result.push({ name: '四暗刻', point: 'y' });
     if (isDaisangen(haishi)) result.push({ name: '大三元', point: 'y' });
     if (isTsuiso(haishi)) result.push({ name: '字一色', point: 'y' });
+    if (isRyuiso(haishi)) result.push({ name: '緑一色', point: 'y' });
 
     return result.length > 0 ? result : undefined;
 };

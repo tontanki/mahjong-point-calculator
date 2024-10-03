@@ -57,13 +57,21 @@ export class Haishi {
 
     getTilesTypeList(key: TileType): string {
         const tiles = this.haishi[key].map((tileNumber) => {
-            if (tileNumber === 0) {
-                return '';
-            }
             return tileNumber;
         });
 
         return tiles.join('');
+    }
+
+    getTileCount(tile: Tile): number {
+        const tileType = tile.name[0] as TileType;
+        const tileNumber = Number(tile.name[1]) as TileNumber;
+
+        const count = this.haishi[tileType][tileNumber];
+        if (count === undefined) {
+            throw new Error('指定された牌が存在しません');
+        }
+        return count;
     }
 
     countSpecificTiles(target: number): number {
