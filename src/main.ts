@@ -26,10 +26,10 @@ export const pointCalculator = (
 };
 
 const hand = [
-    { name: 'm1' },
-    { name: 'm1' },
-    { name: 'm1' },
-    { name: 'm2' },
+    { name: 'z1' },
+    { name: 'z1' },
+    { name: 'z1' },
+    { name: 'z2' },
     { name: 'z5' },
     { name: 'z5' },
     { name: 'z5' },
@@ -41,7 +41,7 @@ const hand = [
     { name: 'z7' },
 ];
 
-const agariTile = { name: 'm2' };
+const agariTile = { name: 'z2' };
 const fulo = null;
 const grandBrow = '東';
 const playerBrow = '東';
