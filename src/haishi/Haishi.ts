@@ -66,6 +66,14 @@ export class Haishi {
         return tiles.join('');
     }
 
+    countSpecificTiles(target: number): number {
+        let count = 0;
+        for (const key in this.haishi) {
+            count += this.haishi[key].filter((tile) => tile === target).length;
+        }
+        return count;
+    }
+
     validate(): boolean {
         if (this.totalTiles > 14) {
             throw new Error('手牌が14枚を超えています');

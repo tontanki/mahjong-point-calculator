@@ -29,19 +29,19 @@ const hand = [
     { name: 'm1' },
     { name: 'm1' },
     { name: 'm1' },
-    { name: 'm3' },
-    { name: 'm3' },
-    { name: 'm4' },
-    { name: 'm4' },
-    { name: 'm5' },
-    { name: 'm5' },
-    { name: 'm8' },
-    { name: 'm8' },
-    { name: 'm9' },
-    { name: 'm9' },
+    { name: 'm2' },
+    { name: 'z5' },
+    { name: 'z5' },
+    { name: 'z5' },
+    { name: 'z6' },
+    { name: 'z6' },
+    { name: 'z6' },
+    { name: 'z7' },
+    { name: 'z7' },
+    { name: 'z7' },
 ];
 
-const agariTile = { name: 'm9' };
+const agariTile = { name: 'm2' };
 const fulo = null;
 const grandBrow = '東';
 const playerBrow = '東';
