@@ -77,6 +77,14 @@ export class Haishi {
             .length;
     }
 
+    getTileTypeSum(key: TileType): number {
+        const array = this.hand[key].filter(
+            (tileNumber) => tileNumber !== undefined
+        );
+        const sum = array.reduce((a, b) => a + b, 0);
+        return sum;
+    }
+
     getTileCount(tile: Tile): number {
         const tileType = tile.name[0] as TileType;
         const tileNumber = Number(tile.name[1]) as TileNumber;

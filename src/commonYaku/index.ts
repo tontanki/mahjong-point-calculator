@@ -2,11 +2,13 @@ import { Tile, TileType, Mentsu } from '@types*';
 import { Haishi } from 'src/haishi/Haishi';
 import { determineHead } from './determineHead';
 import { convertMentsuFromHand } from './convertMentsuFromHand';
+import { commonYakuCalculator } from './commonYakuCalculator';
 
 export const commonYakuFinder = (
     haishi: Haishi,
-    agariTile: Tile,
-    agariType: 'ツモ' | 'ロン'
+    grandBrow: '東' | '南' | '西' | '北',
+    playerBrow: '東' | '南' | '西' | '北',
+    isRichi: boolean
 ): string[] => {
     const result: string[] = [];
     const types: TileType[] = ['m', 'p', 's', 'z'];
@@ -22,21 +24,28 @@ export const commonYakuFinder = (
             if (head === undefined) continue;
             mentsu.push(head);
 
-            console.log('haishi before : ', clonedHaishi);
             const { shuntsuFirst, koutsuFirst } =
                 convertMentsuFromHand(clonedHaishi);
 
             if (shuntsuFirst !== undefined) {
-                console.log(
-                    'shuntsuFirst : ',
-                    JSON.stringify(shuntsuFirst, null, 2)
+                const test = commonYakuCalculator(
+                    haishi,
+                    shuntsuFirst,
+                    grandBrow,
+                    playerBrow,
+                    isRichi
                 );
+                console.log('yaku', test);
             }
             if (koutsuFirst !== undefined) {
-                console.log(
-                    'koutsuFirst : ',
-                    JSON.stringify(koutsuFirst, null, 2)
+                const test = commonYakuCalculator(
+                    haishi,
+                    koutsuFirst,
+                    grandBrow,
+                    playerBrow,
+                    isRichi
                 );
+                console.log('yaku', test);
             }
         }
     }

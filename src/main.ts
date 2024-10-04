@@ -2,12 +2,13 @@ import { Tile } from '@types*';
 import { Haishi } from './haishi/Haishi';
 import { yakumanFinder } from './yakuman';
 import { commonYakuFinder } from './commonYaku';
+import { Brow } from './types/Brow';
 
 export const pointCalculator = (
     hand: Tile[],
     agariTile: Tile,
-    grandBrow: '東' | '南' | '西' | '北',
-    playerBrow: '東' | '南' | '西' | '北',
+    grandBrow: Brow,
+    playerBrow: Brow,
     agariType: 'ツモ' | 'ロン',
     isRichi: boolean
 ): void => {
@@ -19,7 +20,7 @@ export const pointCalculator = (
         // return;
     }
 
-    const commonYaku = commonYakuFinder(haishi, agariTile, agariType);
+    const commonYaku = commonYakuFinder(haishi, grandBrow, playerBrow, isRichi);
     console.log(commonYaku);
 };
 
