@@ -10,18 +10,13 @@ export const pointCalculator = (
     agariType: 'ツモ' | 'ロン',
     isRichi: boolean
 ): void => {
-    const haishi = new Haishi();
+    const haishi = new Haishi(hand, agariTile, agariType);
 
-    hand.forEach((tile) => {
-        haishi.addTile(tile);
-    });
-
-    haishi.addTile(agariTile);
-
-    console.log(
-        'yakumanFinder : ',
-        yakumanFinder(haishi, agariTile, agariType)
-    );
+    const yakuman = yakumanFinder(haishi, agariTile, agariType);
+    if (yakuman?.length) {
+        console.log(yakuman);
+        return;
+    }
 };
 
 const hand = [

@@ -8,7 +8,16 @@ export class Haishi {
         z: [undefined, 0, 0, 0, 0, 0, 0, 0],
     };
     totalTiles = 0;
-    constructor() {}
+    agariType: 'ツモ' | 'ロン' = 'ツモ';
+    agariTile: Tile;
+    constructor(hand: Tile[], agariTile: Tile, agariType: 'ツモ' | 'ロン') {
+        hand.forEach((tile) => {
+            this.addTile(tile);
+        });
+        this.addTile(agariTile);
+        this.agariTile = agariTile;
+        this.agariType = agariType;
+    }
 
     addTile(tile: Tile): void {
         const tileType = tile.name[0] as TileType;
@@ -29,7 +38,7 @@ export class Haishi {
     }
 
     clone(): Haishi {
-        const newHaishi = new Haishi();
+        const newHaishi = new Haishi([], this.agariTile, this.agariType);
         newHaishi.haishi = {
             m: [...this.haishi.m],
             p: [...this.haishi.p],
