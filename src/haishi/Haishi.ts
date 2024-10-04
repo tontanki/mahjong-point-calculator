@@ -1,7 +1,7 @@
 import { Tile, TileNumber, TileType, TilesList } from '@types';
 
 export class Haishi {
-    haishi: TilesList = {
+    hand: TilesList = {
         m: [undefined, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         p: [undefined, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         s: [undefined, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -23,7 +23,7 @@ export class Haishi {
         const tileType = tile.name[0] as TileType;
         const tileNumber = Number(tile.name[1]) as TileNumber;
 
-        this.haishi[tileType][tileNumber]++;
+        this.hand[tileType][tileNumber]++;
         this.totalTiles++;
         this.validate();
     }
@@ -32,18 +32,18 @@ export class Haishi {
         const tileType = tile.name[0] as TileType;
         const tileNumber = Number(tile.name[1]) as TileNumber;
 
-        this.haishi[tileType][tileNumber]--;
+        this.hand[tileType][tileNumber]--;
         this.totalTiles--;
         this.validate();
     }
 
     clone(): Haishi {
         const newHaishi = new Haishi([], this.agariTile, this.agariType);
-        newHaishi.haishi = {
-            m: [...this.haishi.m],
-            p: [...this.haishi.p],
-            s: [...this.haishi.s],
-            z: [...this.haishi.z],
+        newHaishi.hand = {
+            m: [...this.hand.m],
+            p: [...this.hand.p],
+            s: [...this.hand.s],
+            z: [...this.hand.z],
         };
         newHaishi.totalTiles = this.totalTiles;
 
@@ -52,20 +52,20 @@ export class Haishi {
 
     getYaochuhai(): number[] {
         const yaochuhai = [
-            ...this.haishi.z,
-            this.haishi.m[1],
-            this.haishi.m[9],
-            this.haishi.p[1],
-            this.haishi.p[9],
-            this.haishi.s[1],
-            this.haishi.s[9],
+            ...this.hand.z,
+            this.hand.m[1],
+            this.hand.m[9],
+            this.hand.p[1],
+            this.hand.p[9],
+            this.hand.s[1],
+            this.hand.s[9],
         ].filter((tileNumber) => tileNumber !== undefined);
 
         return yaochuhai;
     }
 
     getTilesTypeList(key: TileType): string {
-        const tiles = this.haishi[key].map((tileNumber) => {
+        const tiles = this.hand[key].map((tileNumber) => {
             return tileNumber;
         });
 
@@ -73,7 +73,7 @@ export class Haishi {
     }
 
     getTileTypeLength(key: TileType): number {
-        return this.haishi[key].filter((tileNumber) => tileNumber !== undefined)
+        return this.hand[key].filter((tileNumber) => tileNumber !== undefined)
             .length;
     }
 
@@ -81,7 +81,7 @@ export class Haishi {
         const tileType = tile.name[0] as TileType;
         const tileNumber = Number(tile.name[1]) as TileNumber;
 
-        const count = this.haishi[tileType][tileNumber];
+        const count = this.hand[tileType][tileNumber];
         if (count === undefined) {
             throw new Error('指定された牌が存在しません');
         }
@@ -90,8 +90,8 @@ export class Haishi {
 
     countSpecificTiles(target: number): number {
         let count = 0;
-        for (const key in this.haishi) {
-            count += this.haishi[key].filter((tile) => tile === target).length;
+        for (const key in this.hand) {
+            count += this.hand[key].filter((tile) => tile === target).length;
         }
         return count;
     }
@@ -105,8 +105,8 @@ export class Haishi {
             throw new Error('手牌が0枚を下回っています');
         }
 
-        for (const key in this.haishi) {
-            const tiles = this.haishi[key].filter((tileNumber) => {
+        for (const key in this.hand) {
+            const tiles = this.hand[key].filter((tileNumber) => {
                 tileNumber !== undefined;
             });
 

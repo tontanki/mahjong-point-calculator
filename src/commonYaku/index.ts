@@ -16,6 +16,7 @@ export const commonYakuFinder = (
             const clonedHaishi = haishi.clone();
             const mentsu: Mentsu[] = [];
             const head = determineHead(clonedHaishi, key, j);
+            if (head === undefined) continue;
 
             console.log(head);
         }
