@@ -72,6 +72,11 @@ export class Haishi {
         return tiles.join('');
     }
 
+    getTileTypeLength(key: TileType): number {
+        return this.haishi[key].filter((tileNumber) => tileNumber !== undefined)
+            .length;
+    }
+
     getTileCount(tile: Tile): number {
         const tileType = tile.name[0] as TileType;
         const tileNumber = Number(tile.name[1]) as TileNumber;

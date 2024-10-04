@@ -1,6 +1,7 @@
 import { Tile } from '@types*';
 import { Haishi } from './haishi/Haishi';
 import { yakumanFinder } from './yakuman';
+import { commonYakuFinder } from './commonYaku';
 
 export const pointCalculator = (
     hand: Tile[],
@@ -15,8 +16,11 @@ export const pointCalculator = (
     const yakuman = yakumanFinder(haishi, agariTile, agariType);
     if (yakuman?.length) {
         console.log(yakuman);
-        return;
+        // return;
     }
+
+    const commonYaku = commonYakuFinder(haishi, agariTile, agariType);
+    console.log(commonYaku);
 };
 
 const hand = [
