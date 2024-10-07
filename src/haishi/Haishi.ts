@@ -96,6 +96,10 @@ export class Haishi {
         return count;
     }
 
+    getAgariType(): 'ツモ' | 'ロン' {
+        return this.agariType;
+    }
+
     countSpecificTiles(target: number): number {
         let count = 0;
         for (const key in this.hand) {

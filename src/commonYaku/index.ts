@@ -35,7 +35,7 @@ export const commonYakuFinder = (
                     playerBrow,
                     isRichi
                 );
-                console.log('yaku', test);
+                console.log('shuntsuFirst : ', test);
             }
             if (koutsuFirst !== undefined) {
                 const test = commonYakuCalculator(
@@ -45,7 +45,7 @@ export const commonYakuFinder = (
                     playerBrow,
                     isRichi
                 );
-                console.log('yaku', test);
+                console.log('koutsuFirst : ', test);
             }
         }
     }

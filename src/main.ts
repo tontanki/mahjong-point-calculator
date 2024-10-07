@@ -25,18 +25,18 @@ export const pointCalculator = (
 };
 
 const hand = [
-    { name: 'm1' },
-    { name: 'm1' },
+    { name: 'z1' },
+    { name: 'z1' },
+    { name: 'z1' },
     { name: 'm2' },
     { name: 'm2' },
-    { name: 'm3' },
-    { name: 'm3' },
-    { name: 's1' },
-    { name: 's1' },
-    { name: 's1' },
-    { name: 's9' },
-    { name: 's9' },
-    { name: 's9' },
+    { name: 'm2' },
+    { name: 'z5' },
+    { name: 'z5' },
+    { name: 'z5' },
+    { name: 'z6' },
+    { name: 'z6' },
+    { name: 'z6' },
     { name: 'p1' },
 ];
 
