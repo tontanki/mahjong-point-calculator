@@ -1,4 +1,4 @@
-import { Tile, TileType, Mentsu } from '@types*';
+import { TileType, Mentsu } from '@types*';
 import { Haishi } from 'src/haishi/Haishi';
 import { determineHead } from './determineHead';
 import { convertMentsuFromHand } from './convertMentsuFromHand';

@@ -4,6 +4,7 @@ import { Brow } from 'src/types/Brow';
 import { isJuntyan } from './yaku/juntyan';
 import { isChinitsu } from './yaku/chinitsu';
 import { isYakuhai } from './yaku/yakuhai';
+import { isSyosangen } from './yaku/syosangen';
 
 export const commonYakuCalculator = (
     haishi: Haishi,
@@ -24,6 +25,7 @@ export const commonYakuCalculator = (
         if (isJuntyan(mentsu)) result.push({ name: '純全帯幺九', point: 3 });
     } else {
         result.push(...isYakuhai(haishi, grandBrow, playerBrow));
+        if (isSyosangen(haishi)) result.push({ name: '小三元', point: 2 });
     }
 
     return result;
