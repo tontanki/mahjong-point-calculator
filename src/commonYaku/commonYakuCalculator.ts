@@ -10,6 +10,7 @@ import { isHonroutou } from './yaku/honroutou';
 import { isTyanta } from './yaku/tyanta';
 import { isIpeko } from './yaku/ipeko';
 import { isRyanpeko } from './yaku/ryanpeko';
+import { isSanankou } from './yaku/sanankou';
 
 export const commonYakuCalculator = (
     haishi: Haishi,
@@ -38,6 +39,8 @@ export const commonYakuCalculator = (
     }
     if (isRyanpeko(mentsu)) result.push({ name: '二盃口', point: 3 });
     else if (isIpeko(mentsu)) result.push({ name: '一盃口', point: 1 });
+
+    if (isSanankou(mentsu, haishi)) result.push({ name: '三暗刻', point: 2 });
 
     return result;
 };
