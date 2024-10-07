@@ -8,6 +8,8 @@ import { isSyosangen } from './yaku/syosangen';
 import { isHonitsu } from './yaku/honitsu';
 import { isHonroutou } from './yaku/honroutou';
 import { isTyanta } from './yaku/tyanta';
+import { isIpeko } from './yaku/ipeko';
+import { isRyanpeko } from './yaku/ryanpeko';
 
 export const commonYakuCalculator = (
     haishi: Haishi,
@@ -34,6 +36,8 @@ export const commonYakuCalculator = (
         if (isSyosangen(haishi)) result.push({ name: '小三元', point: 2 });
         if (isHonitsu(haishi)) result.push({ name: '混一色', point: 3 });
     }
+    if (isRyanpeko(mentsu)) result.push({ name: '二盃口', point: 3 });
+    else if (isIpeko(mentsu)) result.push({ name: '一盃口', point: 1 });
 
     return result;
 };
