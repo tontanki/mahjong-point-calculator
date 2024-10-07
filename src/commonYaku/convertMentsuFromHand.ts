@@ -15,7 +15,7 @@ const determineShuntsu = (haishi: Haishi): Mentsu[] => {
                 haishi.getTileCount(tile2),
                 haishi.getTileCount(tile3)
             );
-            if (min === 1) continue;
+            if (min === 0) continue;
             for (let k = 0; k < min; k++) {
                 haishi.removeTile(tile1);
                 haishi.removeTile(tile2);

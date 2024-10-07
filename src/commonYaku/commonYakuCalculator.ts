@@ -7,6 +7,7 @@ import { isYakuhai } from './yaku/yakuhai';
 import { isSyosangen } from './yaku/syosangen';
 import { isHonitsu } from './yaku/honitsu';
 import { isHonroutou } from './yaku/honroutou';
+import { isTyanta } from './yaku/tyanta';
 
 export const commonYakuCalculator = (
     haishi: Haishi,
@@ -28,6 +29,8 @@ export const commonYakuCalculator = (
     } else {
         result.push(...isYakuhai(haishi, grandBrow, playerBrow));
         if (isHonroutou(haishi)) result.push({ name: '混老頭', point: 2 });
+        else if (isTyanta(mentsu))
+            result.push({ name: '混全帯么九', point: 2 });
         if (isSyosangen(haishi)) result.push({ name: '小三元', point: 2 });
         if (isHonitsu(haishi)) result.push({ name: '混一色', point: 3 });
     }
