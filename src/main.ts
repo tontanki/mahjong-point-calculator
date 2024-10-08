@@ -25,19 +25,19 @@ export const pointCalculator = (
 };
 
 const hand = [
-    { name: 'm1' },
     { name: 'm2' },
     { name: 'm3' },
     { name: 'm4' },
+    { name: 'm4' },
     { name: 'm5' },
     { name: 'm6' },
-    { name: 's1' },
+    { name: 's4' },
     { name: 's2' },
     { name: 's3' },
     { name: 's6' },
     { name: 's7' },
-    { name: 'z1' },
-    { name: 'z1' },
+    { name: 'p2' },
+    { name: 'p2' },
 ];
 
 const agariTile = { name: 's8' };
