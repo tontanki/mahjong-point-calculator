@@ -14,6 +14,8 @@ import { isSanankou } from './yaku/sanankou';
 import { isPinfu } from './yaku/pinfu';
 import { isTanyao } from './yaku/tanyao';
 import { isSansyokudoukoku } from './yaku/sansyokudoukoku';
+import { isToitoi } from './yaku/toitoi';
+import { isIkkitsukan } from './yaku/ikkitsukan';
 
 export const commonYakuCalculator = (
     haishi: Haishi,
@@ -49,6 +51,8 @@ export const commonYakuCalculator = (
 
     if (isTanyao(haishi)) result.push({ name: '断么九', point: 1 });
     if (isSansyokudoukoku(mentsu)) result.push({ name: '三色同刻', point: 2 });
+    if (isToitoi(mentsu)) result.push({ name: '対々和', point: 2 });
+    if (isIkkitsukan(mentsu)) result.push({ name: '一気通貫', point: 2 });
 
     return result;
 };
