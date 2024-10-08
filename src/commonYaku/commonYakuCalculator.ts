@@ -11,6 +11,7 @@ import { isTyanta } from './yaku/tyanta';
 import { isIpeko } from './yaku/ipeko';
 import { isRyanpeko } from './yaku/ryanpeko';
 import { isSanankou } from './yaku/sanankou';
+import { isPinfu } from './yaku/pinfu';
 
 export const commonYakuCalculator = (
     haishi: Haishi,
@@ -41,6 +42,8 @@ export const commonYakuCalculator = (
     else if (isIpeko(mentsu)) result.push({ name: '一盃口', point: 1 });
 
     if (isSanankou(mentsu, haishi)) result.push({ name: '三暗刻', point: 2 });
+    if (isPinfu(mentsu, haishi, grandBrow, playerBrow))
+        result.push({ name: '平和', point: 1 });
 
     return result;
 };

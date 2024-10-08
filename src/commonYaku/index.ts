@@ -3,11 +3,12 @@ import { Haishi } from 'src/haishi/Haishi';
 import { determineHead } from './determineHead';
 import { convertMentsuFromHand } from './convertMentsuFromHand';
 import { commonYakuCalculator } from './commonYakuCalculator';
+import { Brow } from 'src/types/Brow';
 
 export const commonYakuFinder = (
     haishi: Haishi,
-    grandBrow: '東' | '南' | '西' | '北',
-    playerBrow: '東' | '南' | '西' | '北',
+    grandBrow: Brow,
+    playerBrow: Brow,
     isRichi: boolean
 ): string[] => {
     const result: string[] = [];
@@ -17,15 +18,16 @@ export const commonYakuFinder = (
         const key = types[i];
         for (let j = 1; j <= haishi.getTileTypeLength(key); j++) {
             const clonedHaishi = haishi.clone();
-            const mentsu: Mentsu[] = [];
 
             // 雀頭の設定
             const head = determineHead(clonedHaishi, key, j);
             if (head === undefined) continue;
-            mentsu.push(head);
 
             const { shuntsuFirst, koutsuFirst } =
                 convertMentsuFromHand(clonedHaishi);
+
+            shuntsuFirst?.unshift(head);
+            koutsuFirst?.unshift(head);
 
             if (shuntsuFirst !== undefined) {
                 const test = commonYakuCalculator(

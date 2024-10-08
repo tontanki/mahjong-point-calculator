@@ -8,17 +8,12 @@ export const isYakuhai = (
 ): { name: string; point: number }[] => {
     const result = [];
 
-    if (haishi.getTileCount({ name: 'z1' }) === 3) {
-        if (grandBrow === '東') result.push({ name: '場風牌', point: 1 });
-        if (playerBrow === '東') result.push({ name: '自風牌', point: 1 });
+    if (haishi.getTileCount({ name: grandBrow }) === 3) {
+        result.push({ name: '場風牌', point: 1 });
     }
-    if (haishi.getTileCount({ name: 'z2' }) === 3) {
-        if (grandBrow === '南') result.push({ name: '場風牌', point: 1 });
-        if (playerBrow === '南') result.push({ name: '自風牌', point: 1 });
-    }
-    if (haishi.getTileCount({ name: 'z3' }) === 3) {
-        if (grandBrow === '西') result.push({ name: '場風牌', point: 1 });
-        if (playerBrow === '西') result.push({ name: '自風牌', point: 1 });
+
+    if (haishi.getTileCount({ name: playerBrow }) === 3) {
+        result.push({ name: '自風牌', point: 1 });
     }
 
     if (haishi.getTileCount({ name: 'z5' }) === 3) {

@@ -26,23 +26,23 @@ export const pointCalculator = (
 
 const hand = [
     { name: 'm1' },
-    { name: 'm1' },
-    { name: 'm1' },
     { name: 'm2' },
-    { name: 'm2' },
-    { name: 'm2' },
-    { name: 's3' },
-    { name: 's3' },
-    { name: 's3' },
+    { name: 'm3' },
+    { name: 'm4' },
+    { name: 'm5' },
+    { name: 'm6' },
     { name: 's1' },
-    { name: 's1' },
+    { name: 's2' },
+    { name: 's3' },
+    { name: 's6' },
+    { name: 's7' },
     { name: 'z1' },
     { name: 'z1' },
 ];
 
-const agariTile = { name: 'z1' };
-const grandBrow = '東';
-const playerBrow = '東';
+const agariTile = { name: 's8' };
+const grandBrow = 'z1';
+const playerBrow = 'z2';
 const agariType = 'ロン';
 const isRichi = false;
 

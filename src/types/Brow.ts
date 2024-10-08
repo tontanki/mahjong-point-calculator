@@ -1,1 +1,1 @@
-export type Brow = '東' | '南' | '西' | '北';
+export type Brow = 'z1' | 'z2' | 'z3' | 'z4';
