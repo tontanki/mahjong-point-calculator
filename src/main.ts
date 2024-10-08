@@ -11,36 +11,35 @@ export const pointCalculator = (
     playerBrow: Brow,
     agariType: 'ツモ' | 'ロン',
     isRichi: boolean
-): void => {
+): { name: string; point: number | string }[] => {
     const haishi = new Haishi(hand, agariTile, agariType);
 
     const yakuman = yakumanFinder(haishi, agariTile, agariType);
     if (yakuman?.length) {
-        console.log(yakuman);
-        // return;
+        return yakuman;
     }
 
     const commonYaku = commonYakuFinder(haishi, grandBrow, playerBrow, isRichi);
-    console.log(commonYaku);
+    return commonYaku;
 };
 
 const hand = [
     { name: 'm1' },
+    { name: 'm1' },
+    { name: 'm2' },
     { name: 'm2' },
     { name: 'm3' },
+    { name: 'm3' },
     { name: 'm4' },
-    { name: 'm5' },
+    { name: 'm4' },
+    { name: 'm9' },
+    { name: 'm9' },
+    { name: 'm6' },
     { name: 'm6' },
     { name: 'm7' },
-    { name: 'm8' },
-    { name: 'm9' },
-    { name: 's8' },
-    { name: 's8' },
-    { name: 'p2' },
-    { name: 'p2' },
 ];
 
-const agariTile = { name: 's8' };
+const agariTile = { name: 'm7' };
 const grandBrow = 'z1';
 const playerBrow = 'z2';
 const agariType = 'ロン';
