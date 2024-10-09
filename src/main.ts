@@ -22,27 +22,3 @@ export const pointCalculator = (
     const commonYaku = commonYakuFinder(haishi, grandBrow, playerBrow, isRichi);
     return commonYaku;
 };
-
-const hand = [
-    { name: 'm1' },
-    { name: 'm1' },
-    { name: 'm2' },
-    { name: 'm2' },
-    { name: 'm3' },
-    { name: 'm3' },
-    { name: 'm4' },
-    { name: 'm4' },
-    { name: 'm9' },
-    { name: 'm9' },
-    { name: 'm6' },
-    { name: 'm6' },
-    { name: 'm7' },
-];
-
-const agariTile = { name: 'm7' };
-const grandBrow = 'z1';
-const playerBrow = 'z2';
-const agariType = 'ロン';
-const isRichi = false;
-
-pointCalculator(hand, agariTile, grandBrow, playerBrow, agariType, isRichi);
