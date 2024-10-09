@@ -2,11 +2,16 @@
     "name": "mahjong-pointcalculator",
     "version": "1.0.0",
     "description": "麻雀点数計算",
-    "main": "index.js",
+    "main": "dist/main.js",
+    "types": "dist/main.d.ts",
     "scripts": {
+        "build": "tsc",
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "npx tsc && node dist/main.js"
     },
+    "files": [
+        "dist"
+    ],
     "keywords": [],
     "author": "",
     "license": "ISC",
