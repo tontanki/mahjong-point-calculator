@@ -38,15 +38,14 @@ const determineKoutsu = (haishi: Haishi): Mentsu[] => {
         for (let j = 1; j <= haishi.getTileTypeLength(key); j++) {
             const tile = { name: `${key}${j}` };
             const count = haishi.getTileCount(tile);
-            if (count >= 3) {
-                for (let k = 0; k < count; k++) {
-                    haishi.removeTile(tile);
-                }
-                mentsu.push({
-                    type: '刻子',
-                    tiles: [tile, tile, tile],
-                });
+            if (count < 3) continue;
+            for (let k = 0; k < 3; k++) {
+                haishi.removeTile(tile);
             }
+            mentsu.push({
+                type: '刻子',
+                tiles: [tile, tile, tile],
+            });
         }
     }
     return mentsu;
